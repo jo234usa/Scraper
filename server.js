@@ -10,7 +10,7 @@ var Article = require("./models/Article.js");
 var Note = require("./models/Notes.js");
 
 var app = express();
-var port = 3002;
+var port = process.env.PORT || 3002;
 
 app.use(bodyParser.urlencoded({
 	extended: false
@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/mongoosescraper");
+mongoose.connect("mongodb://heroku_h6f54dbk:dr04cts0kqqtekan34i9b2mq4b@ds121014.mlab.com:21014/heroku_h6f54dbk");
 var db = mongoose.connection;
 
 db.on("error", function(error){
@@ -28,6 +28,8 @@ db.on("error", function(error){
 db.once("open", function(){
 	console.log("Mongoose connection successful.")
 });
+
+
 
 app.get("/scrape", function(req, res){
 	request("http://nymag.com/tags/sex-diaries/", function(error, response, html){
@@ -102,6 +104,11 @@ app.post("/articles/:id", function(req, res){
 		}
 	});
 });
+
+app.get("/", function(req, res) {
+	console.log("Hitting the home route");
+	res.sendFile("public/index.html")
+})
 
 // Port 
 app.listen(port, function(){
