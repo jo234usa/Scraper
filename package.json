@@ -1,0 +1,27 @@
+{
+  "name": "scraper",
+  "version": "1.0.0",
+  "description": "RCBS Scraper assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jo234usa/Scraper.git"
+  },
+  "author": "J. Ong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jo234usa/Scraper/issues"
+  },
+  "homepage": "https://github.com/jo234usa/Scraper#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.11.9",
+    "request": "^2.81.0"
+  }
+}
