@@ -1,4 +1,9 @@
-
+body {
+        background-image: url("lips.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        }
 
 #wrapper {
     width: 960px;
